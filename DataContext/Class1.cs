@@ -11,6 +11,7 @@ namespace DataContext
         public DbSet<User> Users { get; set; }
         public DbSet<Response> Responses { get; set; }
         public DbSet<Area> Areas { get; set; }
+        public DbSet<ProfessionalDescription> ProfessionalDescriptions { get; set; }
         //ככה כותבים?
         public async Task save()
         {
@@ -18,7 +19,7 @@ namespace DataContext
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-FVA15IL;database=ProfessionalDataBase;trusted_connection=true");
+            optionsBuilder.UseSqlServer("server=DESKTOP-FVA15IL;database=ProfessionalDataBase;Trusted_connection=true");
         }
     }
 }
