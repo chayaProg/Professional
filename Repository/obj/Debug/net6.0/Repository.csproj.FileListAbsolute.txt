@@ -1,0 +1,14 @@
+D:\Projec-c#\Professional\Repository\bin\Debug\net6.0\Repository.deps.json
+D:\Projec-c#\Professional\Repository\bin\Debug\net6.0\Repository.runtimeconfig.json
+D:\Projec-c#\Professional\Repository\bin\Debug\net6.0\Repository.dll
+D:\Projec-c#\Professional\Repository\bin\Debug\net6.0\Repository.pdb
+D:\Projec-c#\Professional\Repository\obj\Debug\net6.0\Repository.csproj.AssemblyReference.cache
+D:\Projec-c#\Professional\Repository\obj\Debug\net6.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projec-c#\Professional\Repository\obj\Debug\net6.0\Repository.AssemblyInfoInputs.cache
+D:\Projec-c#\Professional\Repository\obj\Debug\net6.0\Repository.AssemblyInfo.cs
+D:\Projec-c#\Professional\Repository\obj\Debug\net6.0\Repository.csproj.CoreCompileInputs.cache
+D:\Projec-c#\Professional\Repository\obj\Debug\net6.0\Repository.dll
+D:\Projec-c#\Professional\Repository\obj\Debug\net6.0\refint\Repository.dll
+D:\Projec-c#\Professional\Repository\obj\Debug\net6.0\Repository.pdb
+D:\Projec-c#\Professional\Repository\obj\Debug\net6.0\Repository.genruntimeconfig.cache
+D:\Projec-c#\Professional\Repository\obj\Debug\net6.0\ref\Repository.dll

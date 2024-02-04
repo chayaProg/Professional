@@ -1,0 +1,17 @@
+D:\Projec-c#\Professional\DataContext\bin\Debug\net6.0\DataContext.deps.json
+D:\Projec-c#\Professional\DataContext\bin\Debug\net6.0\DataContext.runtimeconfig.json
+D:\Projec-c#\Professional\DataContext\bin\Debug\net6.0\DataContext.dll
+D:\Projec-c#\Professional\DataContext\bin\Debug\net6.0\DataContext.pdb
+D:\Projec-c#\Professional\DataContext\bin\Debug\net6.0\Repository.dll
+D:\Projec-c#\Professional\DataContext\bin\Debug\net6.0\Repository.pdb
+D:\Projec-c#\Professional\DataContext\obj\Debug\net6.0\DataContext.csproj.AssemblyReference.cache
+D:\Projec-c#\Professional\DataContext\obj\Debug\net6.0\DataContext.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projec-c#\Professional\DataContext\obj\Debug\net6.0\DataContext.AssemblyInfoInputs.cache
+D:\Projec-c#\Professional\DataContext\obj\Debug\net6.0\DataContext.AssemblyInfo.cs
+D:\Projec-c#\Professional\DataContext\obj\Debug\net6.0\DataContext.csproj.CoreCompileInputs.cache
+D:\Projec-c#\Professional\DataContext\obj\Debug\net6.0\DataContext.csproj.CopyComplete
+D:\Projec-c#\Professional\DataContext\obj\Debug\net6.0\DataContext.dll
+D:\Projec-c#\Professional\DataContext\obj\Debug\net6.0\refint\DataContext.dll
+D:\Projec-c#\Professional\DataContext\obj\Debug\net6.0\DataContext.pdb
+D:\Projec-c#\Professional\DataContext\obj\Debug\net6.0\DataContext.genruntimeconfig.cache
+D:\Projec-c#\Professional\DataContext\obj\Debug\net6.0\ref\DataContext.dll
