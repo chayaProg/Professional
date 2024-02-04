@@ -43,8 +43,9 @@ namespace Repository.Repositories
         {
             var response =  await _context.Responses.FirstOrDefaultAsync(x => x.Id == id);
             response.Img= item.Img;
-            response.response_description= item.response_description;
+            /*response.response_description= item.response_description;*/
             //הרי לא צריך לשנות תגובה בכל אופן?
+            //לאפשר שינוי של משתמש ובעל מקצוע?
         }
     }
 }

@@ -16,6 +16,7 @@ namespace Repository.Intarfaces
         public DbSet<User> Users { get; set; }
         public DbSet<Response> Responses { get; set; }
         public DbSet<Area> Areas { get; set; }
+        public DbSet<ProfessionalDescription> ProfessionalDescriptions { get; set; }
         public  Task  save();
 
 

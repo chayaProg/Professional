@@ -21,6 +21,7 @@ namespace Services
             CreateMap<ProfessionalDto,Professional>().ReverseMap();
             CreateMap<ResponseDto,Response>().ReverseMap();
             CreateMap<UserDto, User>().ReverseMap();
+            CreateMap<ProfessionalDescriptionDto, ProfessionalDescription>().ReverseMap();
         }
 
     }

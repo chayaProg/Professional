@@ -13,7 +13,8 @@ namespace Common.Entity
         public string? Img { get; set; }
         public DateTime Response_date { get; set; }
 
-        public virtual UserDto user { get; set; }
+        public int UserId { get; set; }
+        public int ProfessionalId { get; set; }
         /*public virtual ProfessionalDto professional { get; set; }*/
     }
 }

@@ -1,25 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Common.Entity
 {
-    public class ProfessionalDto
+    public class ProfessionalDescriptionDto
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        private string identity;
-
-        public string Identity
-        {
-            get { return identity; }
-            set { if(value.Length==9&& value.All(char.IsDigit))
-                identity = value; 
-            }
-        }
-
+        public string Details { get; set; }
         private double years_of_experience
 ;
 
@@ -33,8 +24,8 @@ namespace Common.Entity
             }
             set
             {
-                if(value>-1)
-                  years_of_experience = value;
+                if (value > -1)
+                    years_of_experience = value;
 
             }
         }
@@ -43,8 +34,10 @@ namespace Common.Entity
         public int Professionalism
         {
             get { return professionalism; }
-            set { if(value>-1)
-                professionalism = value; 
+            set
+            {
+                if (value > -1)
+                    professionalism = value;
             }
         }
         private int fair_price;
@@ -52,12 +45,16 @@ namespace Common.Entity
         public int Fair_price
         {
             get { return fair_price; }
-            set { if(value>-1)
-                fair_price = value;
+            set
+            {
+                if (value > -1)
+                    fair_price = value;
             }
         }
-
-        public int AreaId { get; set; }
+        /*לעשות?*/
+        /*public string Img { get; set; }*/
+        public int CategoryId { get; set; }
+        
        
 
     }

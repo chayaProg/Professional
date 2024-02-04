@@ -44,13 +44,14 @@ namespace Repository.Repositories
         {
             var professional =await _context.Professionals.FirstOrDefaultAsync(x => x.Id == id);
             professional.Name = item.Name;
-            professional.Professionalism = item.Professionalism;
-           /* professional.Responses = item.Responses;*/
-            professional.Categories = item.Categories;
-            professional.Years_of_experience = item.Years_of_experience; 
-            professional.Details = item.Details;
-            professional.Img=item.Img;
+            /* professional.Responses = item.Responses;*/
+
+            //לשנות אותו או את האיידי?
             professional.Area=item.Area;
+            professional.AreaId=item.AreaId;
+            professional.Email=item.Email;
+            professional.Phone=item.Phone;
+            
             await _context.save();
         }
     }

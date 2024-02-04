@@ -44,6 +44,7 @@ namespace Repository.Repositories
         {
             var category =  await this.context.Categories.FirstOrDefaultAsync(x => x.Id == id);
             category.Name= item.Name;
+            //לאפשר לשנות גם את האובייקים השונים?
             await  this.context.save();
         }
     }
