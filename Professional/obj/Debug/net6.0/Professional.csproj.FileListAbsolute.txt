@@ -167,3 +167,13 @@ E:\Projec-c#\Professional\Professional\obj\Debug\net6.0\refint\Professional.dll
 E:\Projec-c#\Professional\Professional\obj\Debug\net6.0\Professional.pdb
 E:\Projec-c#\Professional\Professional\obj\Debug\net6.0\Professional.genruntimeconfig.cache
 E:\Projec-c#\Professional\Professional\obj\Debug\net6.0\ref\Professional.dll
+C:\Users\user1\Documents\GitHub\Professional\Professional\obj\Debug\net6.0\Professional.csproj.AssemblyReference.cache
+C:\Users\user1\Documents\GitHub\Professional\Professional\obj\Debug\net6.0\Professional.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user1\Documents\GitHub\Professional\Professional\obj\Debug\net6.0\Professional.AssemblyInfoInputs.cache
+C:\Users\user1\Documents\GitHub\Professional\Professional\obj\Debug\net6.0\Professional.AssemblyInfo.cs
+C:\Users\user1\Documents\GitHub\Professional\Professional\obj\Debug\net6.0\Professional.csproj.CoreCompileInputs.cache
+C:\Users\user1\Documents\GitHub\Professional\Professional\obj\Debug\net6.0\Professional.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\user1\Documents\GitHub\Professional\Professional\obj\Debug\net6.0\Professional.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user1\Documents\GitHub\Professional\Professional\obj\Debug\net6.0\Professional.dll
+C:\Users\user1\Documents\GitHub\Professional\Professional\obj\Debug\net6.0\refint\Professional.dll
+C:\Users\user1\Documents\GitHub\Professional\Professional\obj\Debug\net6.0\Professional.pdb

@@ -19,7 +19,7 @@ namespace DataContext
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB;database=ProfessionalDataBase;trusted_connection=true");
+            optionsBuilder.UseSqlServer("server=DESKTOP-FVA15IL;database=ProfessionalDataBase;TrustServerCertificate=true;trusted_connection=true;");
         }
     }
 }
