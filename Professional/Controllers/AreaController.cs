@@ -10,11 +10,7 @@ namespace Professional.Controllers
     [ApiController]
     public class AreaController : ControllerBase
     {
-        /*private readonly IService<CategoryDto> service;
-        public CategoryController(IService<CategoryDto> service)
-        {
-            this.service = service;
-        }*/
+        
         private readonly IService<AreaDto> _service;
         public AreaController(IService<AreaDto> service)
         {

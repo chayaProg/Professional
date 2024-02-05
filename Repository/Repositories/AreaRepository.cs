@@ -43,7 +43,7 @@ namespace Repository.Repositories
         {
             var  area= await _context.Areas.FirstOrDefaultAsync(x => x.Id == id);
             area.Name= item.Name;
-            _context.save();
+           await _context.save();
         }
     }
 }

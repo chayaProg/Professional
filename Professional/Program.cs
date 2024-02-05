@@ -1,11 +1,18 @@
-var builder = WebApplication.CreateBuilder(args);
+using Repository.Intarfaces;
+using DataContext;
+using Services;
 
+var builder = WebApplication.CreateBuilder(args);
+/*builder.Logging.AddFile("log/my.txt")*/
 // Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//dependens
+builder.Services.AddServices();
+builder.Services.AddSingleton<IContext, Db>();
 
 var app = builder.Build();
 

@@ -4,7 +4,7 @@ using Repository.Intarfaces;
 
 namespace DataContext
 {
-    public class Class1 : DbContext, IContext
+    public class Db : DbContext, IContext
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<Professional> Professionals { get; set; }
@@ -15,7 +15,7 @@ namespace DataContext
         //ככה כותבים?
         public async Task save()
         {
-            SaveChangesAsync(); 
+           await SaveChangesAsync(); 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

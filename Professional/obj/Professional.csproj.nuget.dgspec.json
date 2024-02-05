@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projec-c#\\Professional\\Professional\\Professional.csproj": {}
+    "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Professional\\Professional.csproj": {}
   },
   "projects": {
-    "E:\\Projec-c#\\Professional\\Common\\Common.csproj": {
+    "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projec-c#\\Professional\\Common\\Common.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "E:\\Projec-c#\\Professional\\Common\\Common.csproj",
-        "packagesPath": "C:\\Users\\109\\.nuget\\packages\\",
-        "outputPath": "E:\\Projec-c#\\Professional\\Common\\obj\\",
+        "projectPath": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\109\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -59,24 +60,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Projec-c#\\Professional\\Professional\\Professional.csproj": {
+    "C:\\Users\\user1\\Documents\\GitHub\\Professional\\DataContext\\DataContext.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projec-c#\\Professional\\Professional\\Professional.csproj",
-        "projectName": "Professional",
-        "projectPath": "E:\\Projec-c#\\Professional\\Professional\\Professional.csproj",
-        "packagesPath": "C:\\Users\\109\\.nuget\\packages\\",
-        "outputPath": "E:\\Projec-c#\\Professional\\Professional\\obj\\",
+        "projectUniqueName": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\DataContext\\DataContext.csproj",
+        "projectName": "DataContext",
+        "projectPath": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\DataContext\\DataContext.csproj",
+        "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\DataContext\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\109\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -85,15 +86,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Projec-c#\\Professional\\Services\\Services.csproj": {
-                "projectPath": "E:\\Projec-c#\\Professional\\Services\\Services.csproj"
+              "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Repository\\Repository.csproj"
               }
             }
           }
@@ -108,6 +109,97 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Professional\\Professional.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Professional\\Professional.csproj",
+        "projectName": "Professional",
+        "projectPath": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Professional\\Professional.csproj",
+        "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Professional\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\user1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\user1\\Documents\\GitHub\\Professional\\DataContext\\DataContext.csproj": {
+                "projectPath": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\DataContext\\DataContext.csproj"
+              },
+              "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Services\\Services.csproj": {
+                "projectPath": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Services\\Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.15, )"
@@ -142,24 +234,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Projec-c#\\Professional\\Repository\\Repository.csproj": {
+    "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projec-c#\\Professional\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "E:\\Projec-c#\\Professional\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\109\\.nuget\\packages\\",
-        "outputPath": "E:\\Projec-c#\\Professional\\Repository\\obj\\",
+        "projectPath": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\109\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -168,6 +260,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -219,24 +312,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Projec-c#\\Professional\\Services\\Services.csproj": {
+    "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projec-c#\\Professional\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "E:\\Projec-c#\\Professional\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\109\\.nuget\\packages\\",
-        "outputPath": "E:\\Projec-c#\\Professional\\Services\\obj\\",
+        "projectPath": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\109\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -245,17 +338,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Projec-c#\\Professional\\Common\\Common.csproj": {
-                "projectPath": "E:\\Projec-c#\\Professional\\Common\\Common.csproj"
+              "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Common\\Common.csproj": {
+                "projectPath": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Common\\Common.csproj"
               },
-              "E:\\Projec-c#\\Professional\\Repository\\Repository.csproj": {
-                "projectPath": "E:\\Projec-c#\\Professional\\Repository\\Repository.csproj"
+              "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\user1\\Documents\\GitHub\\Professional\\Repository\\Repository.csproj"
               }
             }
           }
@@ -307,7 +401,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
