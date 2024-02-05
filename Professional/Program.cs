@@ -1,6 +1,7 @@
 using Repository.Intarfaces;
 using DataContext;
 using Services;
+using Class1 = DataContext.Class1;
 
 var builder = WebApplication.CreateBuilder(args);
 /*builder.Logging.AddFile("log/my.txt")*/
@@ -12,7 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //dependens
 builder.Services.AddServices();
-builder.Services.AddSingleton<IContext, Db>();
+builder.Services.AddSingleton<IContext, Class1>();
 
 var app = builder.Build();
 

@@ -4,7 +4,7 @@ using Repository.Intarfaces;
 
 namespace DataContext
 {
-    public class Db : DbContext, IContext
+    public class Class1 : DbContext, IContext
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<Professional> Professionals { get; set; }
