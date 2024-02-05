@@ -17,8 +17,6 @@ namespace Services
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
             services.AddRepository();
-            /*            service.AddScoped<IService<AreaDto>,
-            */
             services.AddScoped<IService<AreaDto>, AreaService>();
             services.AddScoped<IService<CategoryDto>, CategoryService>();
             services.AddScoped<IService<ProfessionalDto>, ProfessionalService>();

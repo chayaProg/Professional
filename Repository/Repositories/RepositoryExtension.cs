@@ -19,6 +19,7 @@ namespace Repository.Repositories
             services.AddScoped<IRepository<Professional>,ProfessionalRepository>();
             services.AddScoped<IRepository<User>,UserRepository>();
             services.AddScoped<IRepository<Response>,ResponseRepository>();
+            services.AddScoped<IRepository<ProfessionalDescription>,ProfessionalDesRepository>();
 
             return services;
         }

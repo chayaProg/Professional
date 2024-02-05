@@ -47,8 +47,10 @@ namespace Repository.Repositories
             professionalDescription.Fair_price = item.Fair_price;
             professionalDescription.Professionalism= item.Professionalism;
             //האם צריך גם לתת לשנות את האובייקטים מהסוג השונה?
-            professionalDescription.Category=item.Category;
-            professionalDescription.CategoryId=item.CategoryId;
+            professionalDescription.CategoryId = item.CategoryId;
+            professionalDescription.ProfessionalId = item.ProfessionalId;
+            //צריך  לעשות?
+         /*   professionalDescription.Responses = item.Responses;*/
             await _context.save();
         }
     }

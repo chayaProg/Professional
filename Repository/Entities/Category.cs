@@ -10,6 +10,6 @@ namespace Repository.Entities
     {
         public int Id { get; set; }
         public string? Name { get; set; }
-        public virtual ICollection<Professional> Professionals { get; set; }
+        public virtual ICollection<ProfessionalDescription> ProfessionalsDescription { get; set; }
     }
 }

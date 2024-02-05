@@ -11,13 +11,13 @@ namespace Repository.Entities
     {
         public int Id { get; set; }
         public string response_description { get; set; }
-        public string Img { get; set; }//הרבה תמונות?
+        public string Img { get; set; }
         public DateTime Response_date { get; set; }
         public int UserId { get; set; }
         [ForeignKey("UserId")]
-        public virtual User user { get; set; }
-        public int ProfessionalId { get; set; }
-        [ForeignKey("ProfessionalId")]
-        public virtual Professional professional { get; set; }
+        public virtual User User { get; set; }
+        public int ProfessionalDesId { get; set; }
+        [ForeignKey("ProfessionalDesId")]
+        public virtual ProfessionalDescription ProfessionalDes { get; set; }
     }
 }

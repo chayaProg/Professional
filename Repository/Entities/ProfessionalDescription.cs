@@ -56,6 +56,9 @@ namespace Repository.Entities
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
+        public int ProfessionalId { get; set; }
+        [ForeignKey("ProfessionalId")]
+        public Professional Professional { get; set; }
         public virtual ICollection<Response> Responses { get; set; }
 
     }

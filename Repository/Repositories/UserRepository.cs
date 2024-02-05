@@ -44,7 +44,8 @@ namespace Repository.Repositories
           user.Name=item.Name;
           user.Email=item.Email;
           user.Phone=item.Phone;
-            
+            await _context.save();
+
         }
     }
 }

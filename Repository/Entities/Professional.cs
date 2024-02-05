@@ -11,6 +11,7 @@ namespace Repository.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        //area
         
         private string identity;
 
@@ -26,9 +27,9 @@ namespace Repository.Entities
         public int AreaId { get; set; }
         [ForeignKey("AreaId")]
         public virtual Area Area { get; set; }
-        //צריך?
-        public virtual ICollection<Category> Categories { get; set; }
-        
+
+        public virtual ICollection<ProfessionalDescription> ProfessionalDescriptions { get; set; }
+      
 
     }
 }
