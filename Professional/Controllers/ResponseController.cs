@@ -31,8 +31,16 @@ namespace Professional.Controllers
 
         // POST api/<ResponseController>
         [HttpPost]
-        public async Task Post([FromBody] ResponseDto response)
+        public async Task Post([FromForm] ResponseDto response)
         {
+            var myPath = Path.Combine(Environment.CurrentDirectory + "/Images/" + response.img.FileName);
+            using (FileStream fs = new FileStream(myPath, FileMode.Create))
+            {
+
+                response.img.CopyTo(fs);
+                fs.Close();
+            }
+            response.Response_date= DateTime.Now;
             await _service.Add(response);
         }
 

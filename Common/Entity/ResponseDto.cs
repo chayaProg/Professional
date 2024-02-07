@@ -13,7 +13,7 @@ namespace Common.Entity
         public int Id { get; set; }
         public string response_description { get; set; }
         /*public List<IFormFile> files { get; set; }*/
-        public IFormFile file { get; set; }
+        public IFormFile img { get; set; }
         public DateTime Response_date { get; set; }
         public int UserId { get; set; }
         public int ProfessionalDesId { get; set; }
