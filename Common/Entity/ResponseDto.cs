@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace Common.Entity
     {
         public int Id { get; set; }
         public string response_description { get; set; }
-        public string Img { get; set; }
+        /*public List<IFormFile> files { get; set; }*/
+        public IFormFile file { get; set; }
         public DateTime Response_date { get; set; }
         public int UserId { get; set; }
         public int ProfessionalDesId { get; set; }
