@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Common.Entity;
+using Microsoft.AspNetCore.Http;
 using Repository.Entities;
 using Repository.Intarfaces;
 using Services.Intaefaces;
@@ -23,7 +24,10 @@ namespace Services.ServicesF
 
         public async Task Add(ResponseDto entity)
         {
-            await _repository.Add(_mapper.Map<Response>(entity));
+            Response response = _mapper.Map<Response>(entity);
+            /*response.Img = entity.img.FileName;*/
+            response.Response_date = DateTime.Now;
+            await _repository.Add(response);
         }
 
         public async Task Delete(int id)
@@ -33,11 +37,14 @@ namespace Services.ServicesF
 
         public async Task<List<ResponseDto>> GetAll()
         {
+
             return _mapper.Map<List<ResponseDto>>(await _repository.GetAll());
+
         }
 
         public async Task<ResponseDto> GetById(int id)
         {
+
             return _mapper.Map<ResponseDto>(await _repository.GetById(id));
         }
 

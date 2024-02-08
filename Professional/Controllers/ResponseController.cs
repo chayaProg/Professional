@@ -1,6 +1,9 @@
-﻿using Common.Entity;
+﻿using System.IO;
+using System;
+using Common.Entity;
 using Microsoft.AspNetCore.Mvc;
 using Services.Intaefaces;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -31,16 +34,20 @@ namespace Professional.Controllers
 
         // POST api/<ResponseController>
         [HttpPost]
-        public async Task Post([FromForm] ResponseDto response)
+        public async Task Post([FromBody] ResponseDto response)
         {
-            var myPath = Path.Combine(Environment.CurrentDirectory + "/Images/" + response.img.FileName);
-            using (FileStream fs = new FileStream(myPath, FileMode.Create))
+            string imagePath = response.img;
+           /* string targetDirectory = Environment.CurrentDirectory + "/Images/" ;*/
+            string targetDirectory = Path.Combine(Environment.CurrentDirectory, "Images");
+            string fileName = Path.GetFileName(imagePath);
+            string destinationPath = Path.Combine(targetDirectory, fileName); // יצירת נתיב מלא ליעד
+            using (var sourceStream = new FileStream(imagePath, FileMode.Open))
+            using (var destinationStream = new FileStream(destinationPath, FileMode.Create))
             {
-
-                response.img.CopyTo(fs);
-                fs.Close();
+                await sourceStream.CopyToAsync(destinationStream);
             }
-            response.Response_date= DateTime.Now;
+           
+
             await _service.Add(response);
         }
 
