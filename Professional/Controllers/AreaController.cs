@@ -32,9 +32,15 @@ namespace Professional.Controllers
 
         // POST api/<AreaController>
         [HttpPost]
-        public async Task Post([FromBody] AreaDto area)
+        public async Task<IActionResult> Post([FromBody] AreaDto area)
         {
-            await _service.Add(area);
+            try {
+                await _service.Add(area);
+                    return Ok(area);
+            }
+            catch(Exception ex) { 
+                return NotFound();
+            };
         }
 
         // PUT api/<AreaController>/5

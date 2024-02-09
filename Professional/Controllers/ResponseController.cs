@@ -40,7 +40,7 @@ namespace Professional.Controllers
            /* string targetDirectory = Environment.CurrentDirectory + "/Images/" ;*/
             string targetDirectory = Path.Combine(Environment.CurrentDirectory, "Images");
             string fileName = Path.GetFileName(imagePath);
-            string destinationPath = Path.Combine(targetDirectory, fileName); // יצירת נתיב מלא ליעד
+            string destinationPath = Path.Combine(targetDirectory, fileName); 
             using (var sourceStream = new FileStream(imagePath, FileMode.Open))
             using (var destinationStream = new FileStream(destinationPath, FileMode.Create))
             {
