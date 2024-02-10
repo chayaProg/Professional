@@ -16,8 +16,38 @@ namespace Common.Entity
         /*public IFormFile img { get; set; }*/
         public string img { get; set; }
 
+        private int professionalism;
+
+        public int Professionalism
+        {
+            get { return professionalism; }
+            set
+            {
+                if (value > -1)
+                    professionalism = value;
+            }
+        }
+        private int fair_price;
+
+        public int Fair_price
+        {
+            get { return fair_price; }
+            set
+            {
+                if (value > -1)
+                    fair_price = value;
+            }
+        }
+
         //איך אני עושה שיהיה אוטומטי
-        /*public DateTime Response_date { get; set; }*/
+        private DateTime date;
+
+        public DateTime Date
+        {
+            get { return date; }
+            set { date = DateTime.Now; }
+        }
+
         public int UserId { get; set; }
         public int ProfessionalDesId { get; set; }
     }

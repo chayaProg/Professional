@@ -29,28 +29,7 @@ namespace Common.Entity
 
             }
         }
-        private int professionalism;
-
-        public int Professionalism
-        {
-            get { return professionalism; }
-            set
-            {
-                if (value > -1)
-                    professionalism = value;
-            }
-        }
-        private int fair_price;
-
-        public int Fair_price
-        {
-            get { return fair_price; }
-            set
-            {
-                if (value > -1)
-                    fair_price = value;
-            }
-        }
+       
         /*לעשות?*/
         /*public string Img { get; set; }*/
         public int CategoryId { get; set; }

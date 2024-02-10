@@ -2,6 +2,7 @@
 using Common.Entity;
 using Repository.Entities;
 using Repository.Intarfaces;
+using Repository.Repositories;
 using Services.Intaefaces;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,13 @@ namespace Services.ServicesF
         public async Task<CategoryDto> GetById(int id)
         {
             return _mapper.Map<CategoryDto>(await _repository.GetById(id));
+
         }
+        public List<ProfessionalDescriptionDto> GetProffById(int id)
+        {
+            return (_mapper.Map<List<ProfessionalDescriptionDto>>(((CategoryRepository)_repository).GetProffById(id)));
+        }
+
 
         public async Task Update(int id, CategoryDto entity)
         {

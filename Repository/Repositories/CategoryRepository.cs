@@ -39,6 +39,11 @@ namespace Repository.Repositories
         {
             return  await this.context.Categories.FirstOrDefaultAsync(x => x.Id == id);
         }
+        public List<ProfessionalDescription> GetProffById(int idCat) {
+
+            return  this.context.Categories.FirstOrDefault(x => x.Id == idCat).ProfessionalsDescription.ToList();
+        
+        }
 
         public async Task Update(int id, Category item)
         {

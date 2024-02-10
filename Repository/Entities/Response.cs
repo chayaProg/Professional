@@ -13,6 +13,29 @@ namespace Repository.Entities
         public string response_description { get; set; }
         public string Img { get; set; }
         public DateTime Response_date { get; set; }
+        private int professionalism;
+
+        public int Professionalism
+        {
+            get { return professionalism; }
+            set
+            {
+                if (value > -1)
+                    professionalism = value;
+            }
+        }
+        private int fair_price;
+
+        public int Fair_price
+        {
+            get { return fair_price; }
+            set
+            {
+                if (value > -1)
+                    fair_price = value;
+            }
+        }
+
         public int UserId { get; set; }
         [ForeignKey("UserId")]
         public virtual User User { get; set; }

@@ -24,7 +24,7 @@ namespace Services.ServicesF
         {
             await _repository.Add(_mapper.Map<User>(entity));
         }
-
+        
         public async Task Delete(int id)
         {
             await _repository.Delete(id);

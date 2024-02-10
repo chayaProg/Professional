@@ -3,6 +3,7 @@ using Common.Entity;
 using Microsoft.AspNetCore.Http;
 using Repository.Entities;
 using Repository.Intarfaces;
+using Repository.Repositories;
 using Services.Intaefaces;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,7 @@ namespace Services.ServicesF
         public async Task Add(ResponseDto entity)
         {
             Response response = _mapper.Map<Response>(entity);
+            
             /*response.Img = entity.img.FileName;*/
             response.Response_date = DateTime.Now;
             await _repository.Add(response);
@@ -47,7 +49,7 @@ namespace Services.ServicesF
 
             return _mapper.Map<ResponseDto>(await _repository.GetById(id));
         }
-
+      
         public async Task Update(int id, ResponseDto entity)
         {
             await _repository.Update(id, _mapper.Map<Response>(entity));

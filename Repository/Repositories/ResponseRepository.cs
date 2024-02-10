@@ -19,7 +19,10 @@ namespace Repository.Repositories
         }
         public async Task Add(Response item)
         {
+            
             await _context.Responses.AddAsync(item);
+
+           /* _context.Responses.FirstOrDefault(x=>x.Id == item.Id).ProfessionalDes.Professionalism=*/
           await _context.save();
         }
         public async Task<Response> GetById(int id)

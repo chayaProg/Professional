@@ -34,7 +34,7 @@ namespace Professional.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] AreaDto area)
         {
-            try {
+            try {    
                 await _service.Add(area);
                     return Ok(area);
             }
@@ -45,16 +45,33 @@ namespace Professional.Controllers
 
         // PUT api/<AreaController>/5
         [HttpPut("{id}")]
-        public async Task Put(int id, [FromBody] AreaDto area)
+        public async Task<IActionResult> Put(int id, [FromBody] AreaDto area)
         {
-            await _service.Update(id, area);
+            try
+            {
+                await _service.Update(id, area);
+                return Ok(area);
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
+            }
+
         }
 
         // DELETE api/<AreaController>/5
         [HttpDelete("{id}")]
-        public async Task Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            await _service.Delete(id);
+            try
+            {
+                await _service.Delete(id);
+                return Ok(await _service.GetById(id));
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
+            }
         }
     }
 }
