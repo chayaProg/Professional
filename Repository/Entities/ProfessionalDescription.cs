@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -51,6 +52,15 @@ namespace Repository.Entities
                     fair_price = value;
             }
         }
+        private int numResponses;
+
+        public int NumResponses
+        {
+            get { return numResponses; }
+            set { numResponses = value; }
+        }
+
+
         /*לעשות?*/
         /*public string Img { get; set; }*/
         public int CategoryId { get; set; }

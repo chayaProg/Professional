@@ -34,7 +34,7 @@ namespace Common.Entity
         /*public string Img { get; set; }*/
         public int CategoryId { get; set; }
         public int ProfessionalId { get; set; }
-
+        public int NumResponses { get; set; }
 
     }
 }

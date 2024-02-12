@@ -19,6 +19,7 @@ namespace Professional.Controllers
         [HttpGet]
         public async Task<List<CategoryDto>> Get()
         {
+            
             return await _service.GetAll();
         }
 
@@ -28,6 +29,12 @@ namespace Professional.Controllers
         {
             return await _service.GetById(id);
         }
+
+        /*[HttpGet("GetPro/{id}")]
+        public async Task<List<ProfessionalDescriptionDto>> GetPro(int id)
+        {
+            return await _service.
+        }*/
 
         // POST api/<CategoryController>
         [HttpPost]

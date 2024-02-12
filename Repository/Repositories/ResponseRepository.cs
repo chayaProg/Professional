@@ -19,11 +19,17 @@ namespace Repository.Repositories
         }
         public async Task Add(Response item)
         {
-            
-            await _context.Responses.AddAsync(item);
-
-           /* _context.Responses.FirstOrDefault(x=>x.Id == item.Id).ProfessionalDes.Professionalism=*/
-          await _context.save();
+            try
+            {
+                await _context.Responses.AddAsync(item);
+                /* ProfessionalDescription professionalDescription = _context.Responses.FirstOrDefault(x => x.Id == item.Id).ProfessionalDes;*/
+                ProfessionalDescription professionalDescription = _context.ProfessionalDescriptions.FirstOrDefault(x => x.Id == item.ProfessionalDesId);
+                professionalDescription.NumResponses++;
+                professionalDescription.Professionalism = (professionalDescription.Professionalism + item.Professionalism )/ professionalDescription.NumResponses;
+                professionalDescription.Fair_price = (professionalDescription.Fair_price + item.Fair_price )/ professionalDescription.NumResponses;
+            }
+            catch { }
+            await _context.save();
         }
         public async Task<Response> GetById(int id)
         {

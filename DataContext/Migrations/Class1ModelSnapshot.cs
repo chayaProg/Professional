@@ -107,6 +107,9 @@ namespace DataContext.Migrations
                     b.Property<int>("Fair_price")
                         .HasColumnType("int");
 
+                    b.Property<int>("NumResponses")
+                        .HasColumnType("int");
+
                     b.Property<int>("ProfessionalId")
                         .HasColumnType("int");
 
@@ -133,11 +136,17 @@ namespace DataContext.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("Fair_price")
+                        .HasColumnType("int");
+
                     b.Property<string>("Img")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProfessionalDesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Professionalism")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Response_date")
@@ -168,6 +177,10 @@ namespace DataContext.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Identity")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

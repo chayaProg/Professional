@@ -12,5 +12,17 @@ namespace Common.Entity
         public string Name { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+
+        private string identity;
+
+        public string Identity
+        {
+            get { return identity; }
+            set
+            {
+                if (value.Length == 9 && value.All(char.IsDigit))
+                    identity = value;
+            }
+        }
     }
 }
