@@ -17,10 +17,20 @@ namespace Repository.Repositories
         {
             this.context = context;
         }
-        public async Task Add(Category item)
-        {
+        public async Task<Category> Add(Category item)
+        { Category category = item;
           await  this.context.Categories.AddAsync(item);
-          await this.context.save();
+            try
+            {
+                await this.context.save();
+                return category;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("cant save Add category");
+            }
+         
         }
 
         public async Task Delete(int id)
@@ -39,17 +49,27 @@ namespace Repository.Repositories
         {
             return  await this.context.Categories.FirstOrDefaultAsync(x => x.Id == id);
         }
-        public List<ProfessionalDescription> GetProffById(int idCat) {
+       /* public async Task<List<ProfessionalDescription>> GetForeinghColletionById(int id )
+        {
+            return await this.context.Categories.FirstOrDefaultAsync(x => x.Id == id);
 
-            return  this.context.Categories.FirstOrDefault(x => x.Id == idCat).ProfessionalsDescription.ToList();
-        
-        }
+        }*/
 
-        public async Task Update(int id, Category item)
+        public async Task<Category> Update(int id, Category item)
         {
             var category =  await this.context.Categories.FirstOrDefaultAsync(x => x.Id == id);
             category.Name= item.Name;
-            await  this.context.save();
+            try
+            {
+                await this.context.save();
+                return category;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("cant save updates in category");
+            }
+            
         }
     }
 }

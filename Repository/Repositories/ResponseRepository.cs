@@ -17,8 +17,8 @@ namespace Repository.Repositories
         {
             _context = context;
         }
-        public async Task Add(Response item)
-        {
+        public async Task<Response> Add(Response item)
+        {    Response response = item;
             try
             {
                 await _context.Responses.AddAsync(item);
@@ -27,9 +27,21 @@ namespace Repository.Repositories
                 professionalDescription.NumResponses++;
                 professionalDescription.Professionalism = (professionalDescription.Professionalism + item.Professionalism )/ professionalDescription.NumResponses;
                 professionalDescription.Fair_price = (professionalDescription.Fair_price + item.Fair_price )/ professionalDescription.NumResponses;
+                try
+                {
+                    await _context.save();
+                    return response;
+                }
+                catch (Exception)
+                {
+
+                    throw new Exception("fall in save in add response");
+                }
             }
-            catch { }
-            await _context.save();
+            catch
+            { throw new Exception("fall in add in add response"); }
+            
+            
         }
         public async Task<Response> GetById(int id)
         {
@@ -48,7 +60,7 @@ namespace Repository.Repositories
 
 
 
-        public async Task Update(int id, Response item)
+        public async Task<Response> Update(int id, Response item)
         {
             var response =  await _context.Responses.FirstOrDefaultAsync(x => x.Id == id);
             response.Img= item.Img;
@@ -57,7 +69,17 @@ namespace Repository.Repositories
             //לאפשר שינוי 
             /*response.ProfessionalDesId = item.ProfessionalDesId;
             response.UserId = item.UserId;*/
-            await _context.save();
+            try
+            {
+                await _context.save();
+                return response;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("fall update response");
+            }
+            
 
         }
     }

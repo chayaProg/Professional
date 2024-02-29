@@ -16,10 +16,21 @@ namespace Repository.Repositories
         {
             _context = context;
         }
-         public async Task Add(ProfessionalDescription item)
+         public async Task<ProfessionalDescription> Add(ProfessionalDescription item)
         {
+             ProfessionalDescription professionaldes = item;
             await _context.ProfessionalDescriptions.AddAsync(item);
-            await _context.save();
+            try
+            {
+                await _context.save();
+                return professionaldes;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Professional description in Add fall ");
+            }
+           
         }
 
         public async Task Delete(int id)
@@ -36,10 +47,10 @@ namespace Repository.Repositories
 
         public async Task<ProfessionalDescription> GetById(int id)
         {
-            return await _context.ProfessionalDescriptions.FirstOrDefaultAsync(x => x.Id == id);
+            return await _context.ProfessionalDescriptions.Include(profdes=>profdes.Professional).FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task Update(int id, ProfessionalDescription item)
+        public async Task<ProfessionalDescription> Update(int id, ProfessionalDescription item)
         {
             var professionalDescription = await _context.ProfessionalDescriptions.FirstOrDefaultAsync(x => x.Id == id);
             professionalDescription.Years_of_experience = item.Years_of_experience;
@@ -50,8 +61,18 @@ namespace Repository.Repositories
             professionalDescription.CategoryId = item.CategoryId;
             professionalDescription.ProfessionalId = item.ProfessionalId;
             //צריך  לעשות?
-         /*   professionalDescription.Responses = item.Responses;*/
-            await _context.save();
+            /*   professionalDescription.Responses = item.Responses;*/
+            try
+            {
+                await _context.save();
+                return professionalDescription;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("");
+            }
+            
         }
     }
 }

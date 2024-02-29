@@ -21,9 +21,10 @@ namespace Services.ServicesF
             _repository = repository;
             _mapper = mapper;
         }
-        public async Task Add(AreaDto entity)
+        public async Task<AreaDto> Add(AreaDto entity)
         {
-            await _repository.Add(_mapper.Map<Area>(entity));
+            return  _mapper.Map<AreaDto>(await _repository.Add(_mapper.Map<Area>(entity)));
+   
         }
 
         public async Task Delete(int id)
@@ -41,9 +42,9 @@ namespace Services.ServicesF
             return _mapper.Map<AreaDto>(await _repository.GetById(id));
         }
 
-        public async Task Update(int id, AreaDto entity)
+        public async Task<AreaDto> Update(int id, AreaDto entity)
         {
-            await _repository.Update(id, _mapper.Map<Area>(entity));
+            return _mapper.Map <AreaDto>( await _repository.Update(id, _mapper.Map<Area>(entity)));
         }
     }
 }

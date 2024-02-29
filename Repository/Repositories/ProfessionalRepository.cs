@@ -18,10 +18,21 @@ namespace Repository.Repositories
             _context = context;
         }
 
-        public async Task Add(Professional item)
+        public async Task<Professional> Add(Professional item)
         {
+            Professional professional = item;
             await _context.Professionals.AddAsync(item);
-            await _context.save();
+            try
+            {
+                await _context.save();
+                return professional;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("fall in add professional");
+            }
+            
         }
 
         public async Task Delete(int id)
@@ -40,7 +51,7 @@ namespace Repository.Repositories
             return await _context.Professionals.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task Update(int id, Professional item)
+        public async Task<Professional> Update(int id, Professional item)
         {
             var professional =await _context.Professionals.FirstOrDefaultAsync(x => x.Id == id);
             professional.Name = item.Name;
@@ -51,7 +62,17 @@ namespace Repository.Repositories
             /*professional.ProfessionalDescriptions=item.ProfessionalDescriptions;*/
             professional.Email = item.Email;
             professional.Phone = item.Phone;
-            await _context.save();
+            try
+            {
+                await _context.save();
+                return professional;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception ("fall in update professional");
+            }
+            
         }
     }
 }

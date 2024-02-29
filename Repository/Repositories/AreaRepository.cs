@@ -16,10 +16,20 @@ namespace Repository.Repositories
         {
             _context= context;
         }
-        public async Task Add(Area item)
+        public async Task<Area> Add(Area item)
         {
+            Area area = item;
             await _context.Areas.AddAsync(item);
-            await _context.save();
+            try { 
+                await _context.save();
+                return area;
+            }
+            catch (Exception e){
+                throw new Exception();
+            }
+           
+            
+              
         }
         public async Task<Area> GetById(int id)
         {
@@ -31,6 +41,7 @@ namespace Repository.Repositories
         {
             return await _context.Areas.ToListAsync();
         }
+        
 
         public async Task Delete(int id)
         {
@@ -39,11 +50,27 @@ namespace Repository.Repositories
 
         }
 
-        public async Task Update(int id, Area item)
+        public async Task<Area> Update(int id, Area item)
         {
             var  area= await _context.Areas.FirstOrDefaultAsync(x => x.Id == id);
             area.Name= item.Name;
-           await _context.save();
+            try
+            {
+                await _context.save();
+                return area;
+
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("dont save updates area");
+            }
+           
         }
+        // לא יבוא פה לישדי שימוש
+        /* public async Task<List<Area>> GetForeinghColletionById(int id)
+        {
+            throw new NotImplementedException();
+        }*/
     }
 }

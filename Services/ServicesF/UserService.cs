@@ -20,9 +20,9 @@ namespace Services.ServicesF
             _mapper = mapper;
             _repository = repository;
         }
-        public async Task Add(UserDto entity)
+        public async Task<UserDto> Add(UserDto entity)
         {
-            await _repository.Add(_mapper.Map<User>(entity));
+            return _mapper.Map<UserDto>(await _repository.Add(_mapper.Map<User>(entity)));
         }
         
         public async Task Delete(int id)
@@ -40,9 +40,9 @@ namespace Services.ServicesF
             return _mapper.Map<UserDto>(await _repository.GetById(id));
         }
 
-        public async Task Update(int id, UserDto entity)
+        public async Task<UserDto> Update(int id, UserDto entity)
         {
-            await _repository.Update(id, _mapper.Map<User>(entity));
+            return _mapper.Map<UserDto>(await _repository.Update(id, _mapper.Map<User>(entity)));
         }
     }
 }

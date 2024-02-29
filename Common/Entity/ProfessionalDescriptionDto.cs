@@ -10,6 +10,7 @@ namespace Common.Entity
     public class ProfessionalDescriptionDto
     {
         public int Id { get; set; }
+        public string CompanyName { get; set; }
         public string Details { get; set; }
         private double years_of_experience
 ;
@@ -35,6 +36,7 @@ namespace Common.Entity
         public int CategoryId { get; set; }
         public int ProfessionalId { get; set; }
         public int NumResponses { get; set; }
+        /*public ProfessionalDto? Professional { get; set; }*/
 
     }
 }

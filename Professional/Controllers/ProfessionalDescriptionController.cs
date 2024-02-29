@@ -1,5 +1,6 @@
 ﻿using Common.Entity;
 using Microsoft.AspNetCore.Mvc;
+using Repository.Entities;
 using Services.Intaefaces;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -31,16 +32,26 @@ namespace Professional.Controllers
 
         // POST api/<ProfessionalDescriptionController>
         [HttpPost]
-        public async Task Post([FromBody] ProfessionalDescriptionDto professionalDes)
+        public async Task<ActionResult> Post([FromBody] ProfessionalDescriptionDto professionalDes)
         {
-            await _service.Add(professionalDes);
+            return Ok(await _service.Add(professionalDes));
+           /* await _service.Add(professionalDes);*/
         }
 
         // PUT api/<ProfessionalDescriptionController>/5
         [HttpPut("{id}")]
-        public async Task Put(int id, [FromBody] ProfessionalDescriptionDto professionalDes)
+        public async Task<ActionResult> Put(int id, [FromBody] ProfessionalDescriptionDto professionalDes)
         {
-            await _service.Update(id, professionalDes);
+            try
+            {
+                await _service.Update(id, professionalDes);
+                return Ok(professionalDes);
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
+            }
+           /* await _service.Update(id, professionalDes);*/
         }
 
         // DELETE api/<ProfessionalDescriptionController>/5

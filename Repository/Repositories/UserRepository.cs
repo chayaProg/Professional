@@ -16,10 +16,33 @@ namespace Repository.Repositories
         {
             _context = context;
         }
-        public async Task Add(User item)
+        public async Task<User> Add(User item)
         {
-            await _context.Users.AddAsync(item);
-            await _context.save();
+            try
+            {
+                await _context.Users.AddAsync(item);
+                User user = item;
+
+                try
+                {
+                    await _context.save();
+                    return user;
+                }
+                catch (Exception)
+                {
+
+                    throw new Exception("fall in save user");
+                }
+
+
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("fall in add user");
+            }
+            
+
         }
 
         public async Task Delete(int id)
@@ -38,13 +61,23 @@ namespace Repository.Repositories
             return await _context.Users.FirstOrDefaultAsync(x=>x.Id==id);
         }
 
-        public async Task Update(int id, User item)
+        public async Task<User> Update(int id, User item)
         {
            var user= await _context.Users.FirstOrDefaultAsync(x=>x.Id==id); 
           user.Name=item.Name;
           user.Email=item.Email;
           user.Phone=item.Phone;
-            await _context.save();
+            try
+            {
+                await _context.save();
+                return user;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("fall in update user");
+            }
+            
 
         }
     }

@@ -3,6 +3,7 @@ using System;
 using Common.Entity;
 using Microsoft.AspNetCore.Mvc;
 using Services.Intaefaces;
+using Repository.Entities;
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -34,7 +35,7 @@ namespace Professional.Controllers
 
         // POST api/<ResponseController>
         [HttpPost]
-        public async Task Post([FromBody] ResponseDto response)
+        public async Task<ActionResult> Post([FromBody] ResponseDto response)
         {
             string imagePath = response.img;
            /* string targetDirectory = Environment.CurrentDirectory + "/Images/" ;*/
@@ -46,16 +47,17 @@ namespace Professional.Controllers
             {
                 await sourceStream.CopyToAsync(destinationStream);
             }
-           
 
-            await _service.Add(response);
+            return Ok(await _service.Add(response));
+           /* await _service.Add(response);*/
         }
 
         // PUT api/<ResponseController>/5
         [HttpPut("{id}")]
-        public async Task Put(int id, [FromBody] ResponseDto response)
+        public async Task<ActionResult> Put(int id, [FromBody] ResponseDto response)
         {
-            await _service.Update(id, response);
+            return Ok(await _service.Add(response));
+            /*await _service.Update(id, response);*/
         }
 
         // DELETE api/<ResponseController>/5

@@ -12,6 +12,7 @@ namespace Repository.Entities
     {
         public int Id { get; set; }
         public string Details { get; set; }
+        public string CompanyName { get; set; }
         private double years_of_experience
 ;
 

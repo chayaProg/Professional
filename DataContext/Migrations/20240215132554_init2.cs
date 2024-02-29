@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DataContext.Migrations
 {
     /// <inheritdoc />
-    public partial class init1 : Migration
+    public partial class init2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -83,6 +83,7 @@ namespace DataContext.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Details = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Years_of_experience = table.Column<double>(type: "float", nullable: false),
                     Professionalism = table.Column<int>(type: "int", nullable: false),
                     Fair_price = table.Column<int>(type: "int", nullable: false),

@@ -1,5 +1,6 @@
 ﻿using Common.Entity;
 using Microsoft.AspNetCore.Mvc;
+using Repository.Entities;
 using Services.Intaefaces;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -38,16 +39,25 @@ namespace Professional.Controllers
 
         // POST api/<CategoryController>
         [HttpPost]
-        public async Task Post([FromBody] CategoryDto category)
+        public async Task<ActionResult>  Post([FromBody] CategoryDto category)
         {
-            await _service.Add(category);
+            return Ok(await _service.Add(category));
         }
 
         // PUT api/<CategoryController>/5
         [HttpPut("{id}")]
-        public async Task Put(int id, [FromBody] CategoryDto category)
+        public async Task<ActionResult> Put(int id, [FromBody] CategoryDto category)
         {
-            await _service.Update(id, category);
+            try
+            {
+                await _service.Update(id, category);
+                return Ok(category);
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
+            }
+            /*await _service.Update(id, category);*/
         }
 
         // DELETE api/<CategoryController>/5

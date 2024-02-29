@@ -21,10 +21,10 @@ namespace Services.ServicesF
             _repository = repository;
             _mapper = mapper;
         }
-        public async Task Add(CategoryDto entity)
+        public async Task<CategoryDto> Add(CategoryDto entity)
         {
-            await _repository.Add(_mapper.Map<Category>(entity));
-        }
+            return _mapper.Map<CategoryDto>(await _repository.Add(_mapper.Map<Category>(entity)));
+        }  
 
         public async Task Delete(int id)
         {
@@ -41,15 +41,16 @@ namespace Services.ServicesF
             return _mapper.Map<CategoryDto>(await _repository.GetById(id));
 
         }
-        public List<ProfessionalDescriptionDto> GetProffById(int id)
+        /*public List<ProfessionalDescriptionDto> GetProffById(int id)
         {
             return (_mapper.Map<List<ProfessionalDescriptionDto>>(((CategoryRepository)_repository).GetProffById(id)));
-        }
+        }*/
 
 
-        public async Task Update(int id, CategoryDto entity)
+        public async Task<CategoryDto> Update(int id, CategoryDto entity)
         {
-            await _repository.Update(id, _mapper.Map<Category>(entity));
+            return _mapper.Map<CategoryDto>(await _repository.Update(id, _mapper.Map<Category>(entity)));
+
         }
     }
 }
