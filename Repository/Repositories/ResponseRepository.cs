@@ -25,8 +25,8 @@ namespace Repository.Repositories
                 /* ProfessionalDescription professionalDescription = _context.Responses.FirstOrDefault(x => x.Id == item.Id).ProfessionalDes;*/
                 ProfessionalDescription professionalDescription = _context.ProfessionalDescriptions.FirstOrDefault(x => x.Id == item.ProfessionalDesId);
                 professionalDescription.NumResponses++;
-                professionalDescription.Professionalism = (professionalDescription.Professionalism + item.Professionalism )/ professionalDescription.NumResponses;
-                professionalDescription.Fair_price = (professionalDescription.Fair_price + item.Fair_price )/ professionalDescription.NumResponses;
+                professionalDescription.Professionalism = (professionalDescription.Professionalism + item.Professionalism);
+                professionalDescription.Fair_price = (professionalDescription.Fair_price + item.Fair_price);
                 try
                 {
                     await _context.save();
@@ -63,7 +63,7 @@ namespace Repository.Repositories
         public async Task<Response> Update(int id, Response item)
         {
             var response =  await _context.Responses.FirstOrDefaultAsync(x => x.Id == id);
-            response.Img= item.Img;
+            response.UrlImage= item.UrlImage;
             //הרי לא צריך לשנות תגובה בכל אופן?
             /*  response.response_description= item.response_description;*/
             //לאפשר שינוי 

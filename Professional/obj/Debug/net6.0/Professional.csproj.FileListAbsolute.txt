@@ -351,3 +351,8 @@ C:\Users\user1\Desktop\GitHub\Professional\Professional\obj\Debug\net6.0\refint\
 C:\Users\user1\Desktop\GitHub\Professional\Professional\obj\Debug\net6.0\Professional.pdb
 C:\Users\user1\Desktop\GitHub\Professional\Professional\obj\Debug\net6.0\Professional.genruntimeconfig.cache
 C:\Users\user1\Desktop\GitHub\Professional\Professional\obj\Debug\net6.0\ref\Professional.dll
+C:\Users\user1\Desktop\GitHub\Professional\Professional\bin\Debug\net6.0\MailKit.dll
+C:\Users\user1\Desktop\GitHub\Professional\Professional\bin\Debug\net6.0\MimeKit.dll
+C:\Users\user1\Desktop\GitHub\Professional\Professional\bin\Debug\net6.0\NETCore.MailKit.dll
+C:\Users\user1\Desktop\GitHub\Professional\Professional\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\user1\Desktop\GitHub\Professional\Professional\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

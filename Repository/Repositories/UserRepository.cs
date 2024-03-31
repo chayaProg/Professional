@@ -80,5 +80,11 @@ namespace Repository.Repositories
             
 
         }
+       /* public async Task<User> GetUserByEmail (string email, string identity)
+        {
+            return await _context.Users.FirstOrDefaultAsync(x => x.Email == email&&x.Identity==identity);
+            throw new ArgumentException("mail/id is not correct or you dont sign-up");
+
+        }*/
     }
 }

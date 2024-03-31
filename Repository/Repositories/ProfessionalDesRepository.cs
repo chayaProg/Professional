@@ -57,6 +57,7 @@ namespace Repository.Repositories
             professionalDescription.Details = item.Details;
             professionalDescription.Fair_price = item.Fair_price;
             professionalDescription.Professionalism= item.Professionalism;
+            professionalDescription.NumResponses = item.NumResponses;
             //האם צריך גם לתת לשנות את האובייקטים מהסוג השונה?
             professionalDescription.CategoryId = item.CategoryId;
             professionalDescription.ProfessionalId = item.ProfessionalId;

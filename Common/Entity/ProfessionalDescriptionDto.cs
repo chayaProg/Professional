@@ -30,12 +30,14 @@ namespace Common.Entity
 
             }
         }
-       
         /*לעשות?*/
         /*public string Img { get; set; }*/
         public int CategoryId { get; set; }
         public int ProfessionalId { get; set; }
         public int NumResponses { get; set; }
+        public int fair_price { get; set; }
+        public int Professionalism { get; set; }
+
         /*public ProfessionalDto? Professional { get; set; }*/
 
     }

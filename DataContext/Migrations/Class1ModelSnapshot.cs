@@ -143,10 +143,6 @@ namespace DataContext.Migrations
                     b.Property<int>("Fair_price")
                         .HasColumnType("int");
 
-                    b.Property<string>("Img")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("ProfessionalDesId")
                         .HasColumnType("int");
 
@@ -156,10 +152,17 @@ namespace DataContext.Migrations
                     b.Property<DateTime>("Response_date")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("UrlImage")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.Property<string>("response_description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("type_Of_Service")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

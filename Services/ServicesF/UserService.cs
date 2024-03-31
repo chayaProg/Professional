@@ -39,6 +39,7 @@ namespace Services.ServicesF
         {
             return _mapper.Map<UserDto>(await _repository.GetById(id));
         }
+       
 
         public async Task<UserDto> Update(int id, UserDto entity)
         {

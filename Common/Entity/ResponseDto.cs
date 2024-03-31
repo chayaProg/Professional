@@ -10,11 +10,15 @@ namespace Common.Entity
 {
     public class ResponseDto
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string response_description { get; set; }
+        public string type_Of_Service { get; set; }
+
         /*public List<IFormFile> files { get; set; }*/
         /*public IFormFile img { get; set; }*/
-        public string img { get; set; }
+        public IFormFile? Image { get; set; }
+        public string? UrlImage { get; set; }
+
 
         private int professionalism;
 
@@ -40,9 +44,9 @@ namespace Common.Entity
         }
 
         //איך אני עושה שיהיה אוטומטי
-        private DateTime date;
+        private DateTime? date;
 
-        public DateTime Date
+        public DateTime? Date
         {
             get { return date; }
             set { date = DateTime.Now; }

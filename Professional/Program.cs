@@ -5,13 +5,29 @@ using Microsoft.Extensions.Logging;
 using Repository.Intarfaces;
 using Services;
 using Services.Intaefaces;
-using Repository.Intarfaces;
 using Services.ServicesF;
 using Class1 = DataContext.Class1;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
+var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(option =>
+                option.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = configuration["Jwt:Issuer"],
+                    ValidAudience = configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]))
 
+                });
 // Add services to the container.
 
 builder.Services.AddControllers();

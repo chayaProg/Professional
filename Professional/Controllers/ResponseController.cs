@@ -4,6 +4,7 @@ using Common.Entity;
 using Microsoft.AspNetCore.Mvc;
 using Services.Intaefaces;
 using Repository.Entities;
+using Azure;
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -19,12 +20,35 @@ namespace Professional.Controllers
         {
             _service = service;
         }
+
+        [HttpGet("getImage/{ImageUrl}")]
+        public string GetImage(string ImageUrl)
+        {
+            if (ImageUrl == null) throw new ArgumentNullException(nameof(ImageUrl));
+            else
+            {
+                //var path = Path.Combine(Environment.CurrentDirectory, "/Controllers" + "/Images/", ImageUrl);
+                var path = Path.Combine(Environment.CurrentDirectory + "/Images/", ImageUrl);
+                byte[] bytes = System.IO.File.ReadAllBytes(path);
+                string imageBase64 = Convert.ToBase64String(bytes);
+                string image = string.Format("data:image/jpeg;base64,{0}", imageBase64);
+                return image;
+            }
+        }
+
+
         // GET: api/<ResponseController>
         [HttpGet]
         public async Task<List<ResponseDto>> Get()
         {
-            return await _service.GetAll();
+            var responses = await _service.GetAll();
+            foreach (var t in responses)
+            {
+                t.UrlImage = GetImage(t.UrlImage);
+            }
+            return responses;
         }
+       
 
         // GET api/<ResponseController>/5
         [HttpGet("{id}")]
@@ -33,33 +57,47 @@ namespace Professional.Controllers
             return await _service.GetById(id);
         }
 
-        // POST api/<ResponseController>
-        [HttpPost]
-        public async Task<ActionResult> Post([FromBody] ResponseDto response)
-        {
-            string imagePath = response.img;
-           /* string targetDirectory = Environment.CurrentDirectory + "/Images/" ;*/
-            string targetDirectory = Path.Combine(Environment.CurrentDirectory, "Images");
-            string fileName = Path.GetFileName(imagePath);
-            string destinationPath = Path.Combine(targetDirectory, fileName); 
-            using (var sourceStream = new FileStream(imagePath, FileMode.Open))
-            using (var destinationStream = new FileStream(destinationPath, FileMode.Create))
-            {
-                await sourceStream.CopyToAsync(destinationStream);
-            }
 
+ 
+
+        [HttpPost]
+        public async Task<ActionResult> Post([FromForm] ResponseDto response)
+        {
+
+            var myPath = Path.Combine(Environment.CurrentDirectory + "/Images/" + response.Image.FileName);
+
+            using (FileStream fs = new FileStream(myPath, FileMode.Create))
+            {
+                response.Image.CopyTo(fs);
+                fs.Close();
+            }
+            response.UrlImage = response.Image.FileName;
+            
             return Ok(await _service.Add(response));
-           /* await _service.Add(response);*/
+
         }
+
 
         // PUT api/<ResponseController>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult> Put(int id, [FromBody] ResponseDto response)
+        /*public async Task<ActionResult> Put(int id, [FromBody] ResponseDto response)
         {
             return Ok(await _service.Add(response));
-            /*await _service.Update(id, response);*/
-        }
+            *//*await _service.Update(id, response);*//*
+        }*/
+        public async void Put(int id, [FromForm] ResponseDto response)
+        {
+            var myPath = Path.Combine(Environment.CurrentDirectory + "/Images/" + response.Image.FileName);
+            Console.WriteLine("myPath: " + myPath);
 
+            using (FileStream fs = new FileStream(myPath, FileMode.Create))
+            {
+                response.Image.CopyTo(fs);
+                fs.Close();
+            }
+            response.UrlImage = response.Image.FileName;
+            await _service.Update(id, response);
+        }
         // DELETE api/<ResponseController>/5
         [HttpDelete("{id}")]
         public async Task Delete(int id)

@@ -10,8 +10,12 @@ namespace Repository.Entities
     public class Response
     {
         public int Id { get; set; }
+        public string type_Of_Service { get; set; }
+
         public string response_description { get; set; }
-        public string Img { get; set; }
+        /*public string Img { get; set; }*/
+        public string? UrlImage { get; set; }
+
         public DateTime Response_date { get; set; }
         private int professionalism;
 
